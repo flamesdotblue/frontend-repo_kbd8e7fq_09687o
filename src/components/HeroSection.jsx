@@ -3,14 +3,16 @@ import Spline from '@splinetool/react-spline';
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[56vh] w-full overflow-hidden rounded-2xl bg-neutral-950">
-      <div className="absolute inset-0">
+    <section className="relative h-[56vh] w-full rounded-2xl bg-neutral-950">
+      {/* Spline layer */}
+      <div className="absolute inset-0 z-0">
         <Spline
           scene="https://prod.spline.design/sbYFqA9b8WbqgI6E/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
 
+      {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
           TEBDASH Chess
@@ -23,7 +25,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
+      {/* Non-blocking overlay */}
+      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
     </section>
   );
 }
